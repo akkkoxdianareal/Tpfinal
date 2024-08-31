@@ -89,7 +89,7 @@
         <!-- NEWEST IMAGES -->
         <div class="newest-slider">
             <h1>Subidas recientemente</h1>
-            <div class="button-new"> 
+            <div class="button-new">
                 <!-- NAV BTN 1 NEWEST SLIDER -->
                 <span class="newest-button" id="nav-btn-2"><i class="fa-solid fa-caret-right"></i></span>
                 <!-- NAV BTN 2 NEWEST SLIDER -->
@@ -228,65 +228,62 @@
 
         setInterval(() => {
             slide()
-        }, 10000);
+        }, 5000);
 
 
         // Slider of newest images in page 
         // MAX 9 items 
-        newestMultiplier = 1;
 
-
-        function slideNewest() {
+        newestMultiplier = 0;
+        
+        function slideNewestRigth() {
+            // Condicion: Si newestmultiplier es menor a 2 ? newestMultiplier se sumara 2 a la variable, si es igual a 2, no sumara nada.
+            newestMultiplier = (newestMultiplier < 2) ? newestMultiplier + 1 : 2;
             let newestContainer = document.querySelector(".newest-container")
             newestWidth = newestContainer.clientWidth;
-
             //  Cuando se clickea, se traslada en el eje x el contenedor de los sliders.
             //  Este ancho se multiplica por un multiplicador; *newestMultiplier*
             //  Este multiplicador es igual a 1; asi se puede mover de inicio
             newestMove.style.transform = "translateX(-" + (newestWidth * newestMultiplier) + "px)"
-            newestMultiplier++;
-            //  Cuando es clickeado se suma, dejando el *newestMultiplier* con un valor de 2; newestMultiplier = 2;
-            //  Entonces, si newestMultiplier es mayor o igual a 2, lo dejaremos en cero.
-            //  Esto hara que al clikear se multiplique el ancho del contenedor por 0; dejando como resultado 0px, o sea, la posición inicial
-            if (newestMultiplier > 2) {
-                newestMultiplier = 0;
-            }
-
-            // Button display
-
-            //  Si el multiplicador es extrictamente igual a 0, o sea, cuando presionamos por primera vez,
-            //  ya que como vimos al presionar se suma 1 a newestMultiplier produciendo que sea igual a 2 o 3;
-            //  cuando el newestmultiplier sea mayor a 2, va a ser igual a 0, produciendo que aparezca nuestro boton de volver.
-            //  Al ser el valor cero y realizar denuevo la funcion *slideNewest*, multiplicara 0 * el ancho del contenedor.
-            //  Si es cero, se volvera 1, ya que, nuestra función con la operacion "newestMultiplier++",
-            //  le sumara automaticamente 1.
-            if (newestMultiplier == 0) {
+            if (newestMultiplier >= 1){
                 navNewestButton1.style.display = "flex"
-
             }
-            // Ya hecha la acción anterior, se fijara si *newestMultiplier* es mayor a 0
-            else if (newestMultiplier > 0) {
-                navNewestButton1.style.display = "none"
-
-            }
-            if (newestMultiplier === 1) {
-                navNewestButton2.style.display = "flex"
-            }
-            else if (newestMultiplier === 0) {
+            if( newestMultiplier == 2){
                 navNewestButton2.style.display = "none"
             }
+            
         }
 
-        navNewestButton2.addEventListener("click", slideNewest)
-        navNewestButton1.addEventListener("click", slideNewest)
+        function slideNewestLeft() {
+            if( newestMultiplier == 1){
+                navNewestButton1.style.display = "none"
+            }
+            if (newestMultiplier >= 1){
+                navNewestButton2.style.display = "flex"
 
+            }
+            // Condicion: Si newestmultiplier es mayor a cero ? newestMultiplier se restara -1 a la variable, si es igual a cero, sera cero
+            newestMultiplier = (newestMultiplier > 0) ? newestMultiplier - 1 : 0;
+            
+            let newestContainer = document.querySelector(".newest-container")
+            newestWidth = newestContainer.clientWidth;
+            newestMove.style.transform = "translateX(-" + (newestWidth * newestMultiplier) + "px)"
+        }
+
+        navNewestButton2.addEventListener("click", () => {
+            slideNewestRigth()
+        })
+        navNewestButton1.addEventListener("click", () => {
+            slideNewestLeft()
+
+        })
     </script>
 
 
 
 
     <!-- HERO Slider template -->
-                    <!-- <div class="hero-slider-container" id="slidercontainer[count]">
+    <!-- <div class="hero-slider-container" id="slidercontainer[count]">
                     <div class="hero-slider-item" id="slider[count]">
                         <h2><i class="fa-solid fa-display"></i>Sin registro</h2>
                         <section class="hero-content">
@@ -299,7 +296,7 @@
                             </section>
                         </section>
                     </div> -->
-     <!-- HERO Slider template -->                
+    <!-- HERO Slider template -->
     </div>
 </body>
 
