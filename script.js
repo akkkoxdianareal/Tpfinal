@@ -27,7 +27,7 @@ const almacenamiento = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
     const typesAccept = ['image/jpeg', 'image/png', 'image/bmp', 'image/tiff', 'image/heif'] // Los tipos de archivos que soporta
     if (!typesAccept.includes(file.mimetype)) {
-        return cb(new Error('Decile al pibe que mande una imagen mia porque sino no funca'), false) // Por si se hace el vivo y no sube una foto mia
+        return cb(new Error('Use archivos con el formato permitido'), false) // Por si se hace el vivo y no sube una foto mia
     }
     cb(null, true) // Si manda una foto mia no pasa nada
 }
@@ -56,5 +56,5 @@ app.get('/images', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Servidor andando en el puerto ${PORT}`)
+    console.log(`Servidor corriendo en el puerto ${PORT}`)
 })

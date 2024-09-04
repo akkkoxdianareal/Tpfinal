@@ -4,12 +4,12 @@
 :root {
     --primarycolor: #ee3f79;
     --secondarycolor: #1c94f7;
-    --accentscolor: #55d394;
+    --accentscolor: #47ee9b;
     --primarycolor-hover: #743afc;
     --secondarycolor-hover: #166bcc;
     --accentscolor-hover: #12c9c0;
-    --bg-color: #ffffff;
-    --bg-secondarycolor: #eeeeee;
+    --bg-color: #19191b;
+    --bg-secondarycolor: #2b2a2a;
     --lite-border: #211c2e3d;
     /* GRADIENTS */
     --primarygradient: linear-gradient(351deg, rgba(116, 58, 252, 1) 23%, rgba(238, 63, 121, 1) 91%);
@@ -17,8 +17,8 @@
     --accentgradient: linear-gradient(351deg, rgba(41, 128, 228, 1) 23%, rgba(85, 211, 148, 1) 91%);
     ;
     /*TEXT COLORS*/
-    --hypervincule: var(--primarycolor);
-    --textcolor: #211c2e;
+    --hypervincule: var(--accentscolor);
+    --textcolor: #e6e5eb;
     --textlight: #fff;
 
     /* Height Variables for dinamyc items */
@@ -30,6 +30,14 @@
     color: var(--textcolor);
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+body .overlay {
+    overflow: hidden;
 }
 
 /* Margins = rem, em*/
@@ -56,7 +64,7 @@ nav {
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
     background-color: var(--bg-color);
     border-bottom: 1px solid var(--lite-border);
 }
@@ -271,10 +279,12 @@ Newest SLider
     flex-direction: column;
 
 }
-.button-new{
+
+.button-new {
     position: relative;
     overflow: visible;
 }
+
 .newest-slider h1 {
     margin-top: .5rem;
     font-size: 24px;
@@ -299,6 +309,7 @@ Newest SLider
     height: 20rem;
     display: flex;
     align-items: center;
+    flex-grow: inherit;
     width: calc(42rem * 6);
     justify-content: center;
     transition: 0.5s;
@@ -306,20 +317,29 @@ Newest SLider
 
 .newest-card {
     margin: .5rem;
-    height: 18rem;
+    max-height: 18rem;
+    min-height: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 16rem;
+    justify-content: center;
+    max-width: 16rem;
+    min-width: 16rem;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 10px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    box-shadow: #ffffff21 0px 0px 0px 2px;
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--bg-secondarycolor);
+}
+
+.newest-card:hover {
+    transition: 0.3s ease-in-out;
+    box-shadow: var(--secondarycolor) 0px 0px 0px 2px;
+
 }
 
 .newest-card img {
-    filter: grayscale();
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -327,20 +347,18 @@ Newest SLider
     border-radius: 20px;
     transition: 0.2s ease-in-out;
 }
-.newest-card:hover img{
-    filter: none;
+
+.newest-card:hover img {
+
     transform: scale(1.05);
 }
 
 .newest-button {
     cursor: pointer;
-    background-color: var(--bg-color);
     position: absolute;
     z-index: 2;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     height: 2rem;
     border-radius: 500000px;
-    border: 1px solid var(--lite-border);
     width: 2rem;
     display: flex;
     justify-content: center;
@@ -348,17 +366,20 @@ Newest SLider
     text-align: center;
     justify-items: center;
     transition: 0.15s;
+    background-color: var(--bg-secondarycolor);
+
 }
 
-.newest-button:hover{
+.newest-button:hover {
     transform: scale(1.05);
 }
 
-.newest-button:hover i{
+.newest-button:hover i {
     color: var(--bg-color);
 }
+
 .newest-button#nav-btn-2 {
-    right: -.7rem;
+    right: -2.5rem;
     opacity: 1;
     transition: 0.2s;
     bottom: 8.5rem;
@@ -366,18 +387,107 @@ Newest SLider
 
 .newest-button#nav-btn-1 {
     display: none;
-    left: -.7rem;
+    left: -2.5rem;
     bottom: 8.5rem;
 }
 
-.newest-button:hover#nav-btn-2 {
-    background: var(--secondarycolor);
+.newest-button:hover {
+    background: var(--accentgradient);
 }
 
-.newest-button:hover#nav-btn-1 {
-    background: var(--secondarycolor);
+header nav img {
+    filter: green;
 }
 
+/* POP UP UPLOADS */
+.upload-file {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-secondarycolor);
+    z-index: 40;
+    height: 20rem;
+    padding: 0.8rem;
+    border-radius: 20px;
+    box-shadow: #ffffff21 0px 0px 0px 2px;
+    width: 30rem
+}
+
+
+.upload-file section {
+    display: flex;
+    padding: 0.2rem;
+
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #ffffff34;
+}
+
+.upload-file section h1 {
+    font-size: 30px;
+
+}
+
+.upload-file section i {
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: #ffffff1e;
+    border-radius: 10px;
+}
+
+.upload-file section i:hover {
+    transition: 0.3s;
+    background: var(--primarygradient);
+
+}
+.upload-file form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.upload-file form button {
+    margin-top: 2rem;
+
+}
+.upload-file form p{
+    margin-bottom: 2rem;
+}
+.upload-file form span{
+    color: var(--primarycolor);
+    font-weight: 800;
+
+}
+.upload-file ::-webkit-file-upload-button{
+    cursor: pointer;
+    background: var(--secondarycolor);
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 40px;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background: var(--bg-color);
+    z-index: 30;
+}
+.upload-file input[type=file]{
+    padding: 1em;
+    background-color: var(--bg-color);
+    border-radius: 40px;
+}
 /* MEDIA QUERRIES */
 @media screen and (max-width: 1024px) {
 
@@ -445,5 +555,16 @@ Newest SLider
 
     .hero-slider-item .hero-content section button {
         margin: 1em 0.5em 0 0.5em;
+    }
+
+    .upload-file {
+        width: 18rem;
+    }
+    .upload-file form{
+        width: 18rem;
+    }
+    .upload-file input[type=file]{
+        width: 14rem;
+
     }
 }

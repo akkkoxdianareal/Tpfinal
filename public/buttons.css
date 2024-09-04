@@ -29,7 +29,9 @@
 }
 
 .btn-upload {
+    cursor: pointer;
     background-image: var(--primarygradient);
+
 }
 
 .btn-not-light{
@@ -43,7 +45,7 @@
 
 }
 .btn-not-light:hover{
-    background-color: var(--bg-color);
+    background-color: #fff;
 }
 .btn-not-light:hover a{
     color: var(--accentscolor-hover);

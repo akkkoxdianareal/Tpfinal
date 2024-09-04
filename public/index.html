@@ -4,13 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIMG / Free image gallery</title>
+  <title>MIMG / Repositorio De Imagenes</title>
   <!-- css -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="buttons.css">
 </head>
 
 <body>
+  <!-- POP UP UPLOADS -->
+   
+    <div class="upload-file">
+     <section><h1>Sube tus archivos</h1><i class="fa-solid fa-xmark" id="salirPopUp"></i></section> 
+      <form id="uploadForm" enctype="multipart/form-data">
+        <p>Formatos admitidos: <span>JPEG</span>  <span>PNG</span>  <span>BMP</span></p>
+        <input  type="file" name="image" id="imageInput" accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
+        <button class="btn btn-upload" type="submit"><a><i class="fa-solid fa-upload"></i></a></button>
+      </form>
+    </div>
+    <div class="overlay"></div>
+   <!-- POP UP UPLOADS -->
   <!--Header-->
   <header>
     <nav>
@@ -19,7 +31,7 @@
         <li class="menuitem"><a href="#"><i class="fa-solid fa-gear"></i>Uso</a></li>
         <li class="menuitem"><a href="#"><i class="fa-regular fa-image"></i>Galeria</a></li>
         <span></span>
-        <button class="btn btn-upload margin-left-2"><a href="#"><i class="fa-solid fa-upload"></i>Subir</a></button>
+        <button class="btn btn-upload margin-left-2" id="subir"><a><i class="fa-solid fa-upload"></i>Subir</a></button>
       </ul>
     </nav>
     <!--Hero slider-->
@@ -205,10 +217,7 @@
         <button type="submit">Subir Imagen</button>
       </form> -->
 
-      <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" name="image" id="imageInput" accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
-        <button type="submit">Subir Imagen</button>
-      </form>
+      
 
 
     </div>
@@ -290,7 +299,7 @@
     })
 
   </script>
-
+  <script src="https://kit.fontawesome.com/2a3113b188.js" crossorigin="anonymous"></script>
 
   <script src="./uploads.js"></script>
 </body>
