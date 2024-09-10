@@ -11,15 +11,9 @@ uploadBtn.addEventListener("click", () => {
     uploadPopUp.style.display = "block"
     uploadOverlay.style.display = "flex"
 })
-
 exitPopUp.addEventListener("click", () => {
     uploadPopUp.style.display = "none"
     uploadOverlay.style.display = "none"
-
-exitPopUp.addEventListener("click", ()=>{
-     uploadPopUp.style.display = "none"
-      uploadOverlay.style.display = "none"
-
 })
 // Agrega las imagenes
 async function loadImages() {
@@ -41,7 +35,6 @@ async function loadImages() {
         gallery.appendChild(newestCard)
     });
 }
-
 
 document.getElementById('uploadForm').addEventListener('submit', async (e) => {
 
@@ -102,29 +95,4 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
         }
         // Arrepentimiento
     })
-
-document.getElementById('uploadForm').addEventListener('submit', async function (e) {
-    event.preventDefault() // Evita que se recargue la pagina y mande cagada
-
-    const formData = new FormData() // Es para poder hacer un objeto despues
-    const imgFile = document.getElementById('imageInput').files[0] // Toma la imagen del input
-    formData.append('image', imgFile) // La imagen que tomo del imput la comvierte en un objeto
-
-    // Define como manda la imagen y con el wait espera que de respuesta
-    const responde = await fetch('/upload', {
-        method: 'POST',
-        body: formData
-    })
-
-    if (responde.ok) { // Si respuesta dar OK, vida buena
-        const data = await responde.json()
-        alert('¡Tu imagen ha sido subida con exito!')
-        uploadPopUp.style.display = "none"
-        uploadOverlay.style.display = "none"
-        await loadImages()
-    } else { // Codigo se revela, ¡MATAR CODIGO!
-        alert('Hubo un error.')
-        // explotarCodigo()
-    }
-
 })
