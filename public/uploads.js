@@ -22,19 +22,21 @@ async function loadImages() {
     const respuesta = await fetch('/images')
     const images = await respuesta.json()
     // Vacia el div para que no se dupliquen ni se mande cagada
-    const gallery = document.querySelector('.newest-move')
+   const newestSlider = document.querySelector('.newest')
+    const gallery = newestSlider.querySelector('.swiper-wrapper')
     gallery.innerHTML = ''
     // Con el foreach va colocando las imagenes en el div
     images.reverse().slice(0, 9).forEach(filename => { // El reverse() es para que se vallan poniendo en primer lugar las nuevas imagenes
         const imgElement = document.createElement('img')
         imgElement.src = `/uploads/${filename}`
         const newestCard = document.createElement('div')
-        newestCard.classList.add('newest-card')
+        newestCard.classList.add('swiper-slide')
         newestCard.appendChild(imgElement)
 
         gallery.appendChild(newestCard)
     });
 }
+
 
 document.getElementById('uploadForm').addEventListener('submit', async (e) => {
 
