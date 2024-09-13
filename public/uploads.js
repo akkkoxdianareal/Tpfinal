@@ -22,7 +22,7 @@ async function loadImages() {
     const respuesta = await fetch('/images')
     const images = await respuesta.json()
     // Vacia el div para que no se dupliquen ni se mande cagada
-   const newestSlider = document.querySelector('.newest')
+    const newestSlider = document.querySelector('.newest')
     const gallery = newestSlider.querySelector('.swiper-wrapper')
     gallery.innerHTML = ''
     // Con el foreach va colocando las imagenes en el div
@@ -36,7 +36,6 @@ async function loadImages() {
         gallery.appendChild(newestCard)
     });
 }
-
 
 document.getElementById('uploadForm').addEventListener('submit', async (e) => {
 
