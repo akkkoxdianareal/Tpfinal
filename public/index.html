@@ -8,300 +8,137 @@
   <!-- css -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="buttons.css">
+  <!-- Swiper slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script type="module" src="extras.js" defer></script>
+
 </head>
 
 <body>
+  <!-- Load -->
+  <div class="loader">
+    <div class="icon-load"></div>
+  </div>
+  <!-- modal UPLOADS -->
+
+  <div class="upload-file">
+    <section>
+      <h1>Sube tus archivos</h1><i class="fa-solid fa-xmark" id="salirPopUp"></i>
+    </section>
+    <form id="uploadForm" action="/new-image" enctype="multipart/form-data">
+      <p>Formatos admitidos: <span>JPEG</span> <span>PNG</span></p>
+      <input type="file" name="image" id="imageInput" accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
+      <button class="btn btn-upload" type="submit"><a><i class="fa-solid fa-upload"></i></a></button>
+    </form>
+  </div>
+  <div class="overlay"></div>
   <!-- POP UP UPLOADS -->
-   
-    <div class="upload-file">
-     <section><h1>Sube tus archivos</h1><i class="fa-solid fa-xmark" id="salirPopUp"></i></section> 
-      <form id="uploadForm" enctype="multipart/form-data">
-        <p>Formatos admitidos: <span>JPEG</span>  <span>PNG</span>  <span>BMP</span></p>
-        <input  type="file" name="image" id="imageInput" accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
-        <button class="btn btn-upload" type="submit"><a><i class="fa-solid fa-upload"></i></a></button>
-      </form>
-    </div>
-    <div class="overlay"></div>
-   <!-- POP UP UPLOADS -->
   <!--Header-->
   <header>
     <nav>
       <img src="logo.svg">
-      <ul>
-        <li class="menuitem"><a href="#"><i class="fa-solid fa-gear"></i>Uso</a></li>
-        <li class="menuitem"><a href="#"><i class="fa-regular fa-image"></i>Galeria</a></li>
-        <span></span>
-        <button class="btn btn-upload margin-left-2" id="subir"><a><i class="fa-solid fa-upload"></i>Subir</a></button>
-      </ul>
-    </nav>
-    <!--Hero slider-->
-    <div class="hero-slider">
-      <div class="hero-container">
-        <div class="slider-move">
-          <!-- slider 1 start -->
-          <div class="hero-slider-container active" id="slidercontainer1">
-            <div class="hero-slider-item" id="slider1">
-              <h2><i class="fas fa-infinity"></i>Uso ilimitado</h2>
-              <section class="hero-content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus quae, labore
-                  possimus
-                  sapiente
-                  quia, eos laudantium dolorem non itaque optio cumque laboriosam vero, consequatur
-                  est
-                  nam
-                  quis
-                  qui asperiores repudiandae!</p>
-                <section>
-                  <button class="btn btn-not-light"><a href="#">Empezar a usar</a></button>
-                  <button class="btn btn-not-light"><a href="#">Ver galeria</a></button>
-                </section>
-              </section>
-            </div>
+      <i class="fa-solid fa-bars" id="menu"></i>
 
+      <div>
+
+        <ul>          
+          <li class="menuitem"><a href="#"><i class="fa-solid fa-gear"></i>Uso</a></li>
+          <li class="menuitem"><a href="#"><i class="fa-regular fa-image"></i>Ventajas</a></li>
+          <li class="menuitem"><a href="#"><i class="fa-regular fa-image"></i>Galeria</a></li>
+        </ul>
+
+        <button class="btn btn-upload margin-left-2" id="subir"><a><i class="fa-solid fa-upload"></i>Subir</a></button>
+      </div>
+    </nav>
+   <!-- MIMG HERO -->
+      <div class="mimg" id="mimg-hero">
+        <div class="mimg-container">
+          <p><span>Mimg</span> es un servicio simple y gratuito de alojamiento de imagenes<br><span> Donde compartir con el mundo tus ideas nunca
+            fue más facil</span></p>
+          <div class="mimg-hero">
+            <img src="resources/mimg1.png" id="mimg1">
+            <img src="resources/mimg2.png" id="mimg2">
+            <img src="resources/mimg3.png" id="mimg3">
           </div>
-          <!-- slider 1 end -->
-          <!-- slider 2 start -->
-          <div class="hero-slider-container" id="slidercontainer2">
-            <div class="hero-slider-item" id="slider2">
-              <h2><i class="fa-solid fa-display"></i>Sin registro</h2>
-              <section class="hero-content">
-                <p>Podes utilizar nuestros servicios sin necesidad de registrarte.
-                  Aprovecha nuestras galerias.<br>
-                  ¡Cada imagen cuenta con una id y una url unicas!
-                </p>
-                <section>
-                  <button class="btn btn-not-light"><a href="#">Conocer sistema id</a></button>
-                </section>
-              </section>
-            </div>
-          </div>
-          <!-- slider 2 end -->
-          <!-- slider 3 start -->
-          <div class="hero-slider-container" id="slidercontainer2">
-            <div class="hero-slider-item" id="slider3">
-              <h2><i class="fa-solid fa-display"></i>Sin registro</h2>
-              <section class="hero-content">
-                <p>Podes utilizar nuestros servicios sin necesidad de registrarte.
-                  Aprovecha nuestras galerias.<br>
-                  ¡Cada imagen cuenta con una id y una url unicas!
-                </p>
-                <section>
-                  <button class="btn btn-not-light"><a href="#">Conocer sistema id</a></button>
-                </section>
-              </section>
-            </div>
-          </div>
-          <!-- slider 3 end -->
         </div>
       </div>
 
-    </div>
-    <!-- Hero slider end -->
     <!-- NEWEST IMAGES -->
-    <div class="newest-slider">
-      <h1>Subidas recientemente</h1>
-      <div class="button-new">
-        <!-- NAV BTN 1 NEWEST SLIDER -->
-        <span class="newest-button" id="nav-btn-2"><i class="fa-solid fa-caret-right"></i></span>
-        <!-- NAV BTN 2 NEWEST SLIDER -->
-        <span class="newest-button" id="nav-btn-1"><i class="fa-solid fa-caret-left"></i></span>
-        <div class="newest-container">
+    <div class="newest-wrapper">
+      <div class="newest-slider">
+        <h1>Subidas recientemente</h1>
+        <div class="newest" navigation="true">
+          <div class="swiper-wrapper">
 
-
-          <div class="newest-move">
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
-            <!-- Newest Img Card start-->
-            <div class="newest-card">
-              <img src="img1.jpg">
-            </div>
-            <!-- Newest Img Card end-->
           </div>
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev" id="newest-nav"></div>
+          <div class="swiper-button-next" id="newest-nav"></div>
         </div>
       </div>
     </div>
     <!-- NEWEST IMAGES END -->
   </header>
   <!-- Header -->
+
+
   <!-- Main container -->
-  <div class="container">
-    <div class="info-container">
-      <main>Repositorio de imagenes gratuito de uso limitado</main>
-      <!-- Info cards -->
-      <div class="info-cards">
-        <!-- card 1 -->
-        <card id="1">
-          <img src="img1.png">
-          <h2>Card Tittle</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, illo? Vel ex ut perferendis,
-            repellat quos mollitia voluptate rem, iste id ea architecto praesentium excepturi?
-            Architecto nobis excepturi vero id.
-          </p>
-        </card>
-        <!-- end card 1 -->
-        <!-- card 2 -->
-        <card id="2">
-          <img src="img1.png">
-          <h2>Card Tittle</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, illo? Vel ex ut perferendis,
-            repellat quos mollitia voluptate rem, iste id ea architecto praesentium excepturi?
-            Architecto nobis excepturi vero id.
-          </p>
-        </card>
-        <!-- end card 2 -->
-        <!-- card 3 -->
-        <card id="3">
-          <img src="img1.png">
-          <h2>Card Tittle</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, illo? Vel ex ut perferendis,
-            repellat quos mollitia voluptate rem, iste id ea architecto praesentium excepturi?
-            Architecto nobis excepturi vero id.
-          </p>
-        </card>
-        <!-- end card 3 -->
-        <!-- card 4 -->
-        <card id="4">
-          <img src="img1.png">
-          <h2>Card Tittle</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, illo? Vel ex ut perferendis,
-            repellat quos mollitia voluptate rem, iste id ea architecto praesentium excepturi?
-            Architecto nobis excepturi vero id.
-          </p>
-        </card>
-        <!-- end card 4 -->
+   <div class="container">
+  <div class="hero-slider" navigation="true" pagination="true" pagination-type="progressbar" id="hero">
+    <!-- Additional required wrapper -->
+    <div class="parallax-bg" style="background-image: url(./resources/bg-paralax.png);" data-swiper-parallax="-23%">
+    </div>
+
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+
+      <!-- slider 1 -->
+      <div class="swiper-slide">
+        <!-- parallax -->
+        <div data-swiper-parallax="-100" data-swiper-parallax-opacity="0"></div>
+        <!-- parallax -->
+        <div class="slider-content" id="item-1">
+          <h1 class="item-title" id="title-1"><i class="fa-solid fa-infinity margin-right-1"></i>Uso ilimitiado</h1>
+          <p>¡Puedes utilizar la plataforma de forma ilimitada, subiendo y compartiendo fotos de forma totalmente
+            gratuita!</p>
+        </div>
       </div>
-      <!-- End Info cards -->
 
+      <!-- slider 2 -->
+      <div class="swiper-slide">
+        <!-- parallax -->
+        <div data-swiper-parallax="-100" data-swiper-parallax-opacity="0"></div>
+        <!-- parallax -->
+        <div class="slider-content" id="item-2">
+          <h1 class="item-title" id="title-2"><i class="fa-regular fa-user margin-right-1"></i>Sin registro</h1>
+          <p>Nuestra plataforma permite el subir imagenes de forma completamente anonima para otros usuarios.</p>
+        </div>
+      </div>
+
+      <!-- slider 3 -->
+      <div class="swiper-slide">
+        <!-- parallax -->
+        <div data-swiper-parallax="-100" data-swiper-parallax-opacity="0"></div>
+        <!-- parallax -->
+        <div class="slider-content" id="item-3">
+          <h1 class="item-title" id="title-3"><i class="fa-solid fa-image margin-right-1"></i>Archivos poco pesados
+          </h1>
+          <p>Nuestro servicio comprime las imagenes para reducir su peso, pero su calidad sigue siendo semejante a la
+            imagen original.</p>
+        </div>
+      </div>
     </div>
-    <div class="upload-form">
-      <!-- <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" name="image" id="imageInput" accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
-        <button type="submit">Subir Imagen</button>
-      </form> -->
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
 
-      
-
-
-    </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev" id="hero-nav"></div>
+    <div class="swiper-button-next" id="hero-nav"></div>
   </div>
-  <script>
-
-    let slider = document.querySelector(".hero-slider")
-    let slideritem = slider.querySelectorAll(".hero-slider-container")
-    let sliderCont = slider.querySelector(".slider-move")
-    let index = 1;
-    let newestItems = document.querySelectorAll(".newest-card")
-    let newestMove = document.querySelector(".newest-move")
-    let navNewestButton1 = document.getElementById("nav-btn-1")
-    let navNewestButton2 = document.getElementById("nav-btn-2")
-
-    function slide() {
-      let sliderWidth = slideritem[0].clientWidth
-      sliderCont.style.transition = "1s"
-      console.log(slideritem[index])
-      sliderCont.style.transform = "translate(-" + (sliderWidth * index) + "px)"
-      console.log(-sliderWidth * index)
-      index++;
-
-      if (index >= slideritem.length)
-        index = 0;
-
-    }
-
-    setInterval(() => {
-      slide()
-    }, 5000);
-
-
-    // Slider of newest images in page 
-    // MAX 9 items 
-
-    newestMultiplier = 0;
-
-    function slideNewestRigth() {
-      // Condicion: Si newestmultiplier es menor a 2 ? newestMultiplier se sumara 2 a la variable, si es igual a 2, no sumara nada.
-      newestMultiplier = (newestMultiplier < 2) ? newestMultiplier + 1 : 2;
-      let newestContainer = document.querySelector(".newest-container")
-      newestWidth = newestContainer.clientWidth;
-      //  Cuando se clickea, se traslada en el eje x el contenedor de los sliders.
-      //  Este ancho se multiplica por un multiplicador; *newestMultiplier*
-      //  Este multiplicador es igual a 1; asi se puede mover de inicio
-      newestMove.style.transform = "translateX(-" + (newestWidth * newestMultiplier) + "px)"
-      if (newestMultiplier >= 1) {
-        navNewestButton1.style.display = "flex"
-      }
-      if (newestMultiplier == 2) {
-        navNewestButton2.style.display = "none"
-      }
-
-    }
-
-    function slideNewestLeft() {
-      if (newestMultiplier == 1) {
-        navNewestButton1.style.display = "none"
-      }
-      if (newestMultiplier >= 1) {
-        navNewestButton2.style.display = "flex"
-
-      }
-      // Condicion: Si newestmultiplier es mayor a cero ? newestMultiplier se restara -1 a la variable, si es igual a cero, sera cero
-      newestMultiplier = (newestMultiplier > 0) ? newestMultiplier - 1 : 0;
-
-      let newestContainer = document.querySelector(".newest-container")
-      newestWidth = newestContainer.clientWidth;
-      newestMove.style.transform = "translateX(-" + (newestWidth * newestMultiplier) + "px)"
-    }
-
-    navNewestButton2.addEventListener("click", () => {
-      slideNewestRigth()
-    })
-    navNewestButton1.addEventListener("click", () => {
-      slideNewestLeft()
-
-    })
-
-  </script>
+  <!-- Hero slider end -->
+</div>
   <script src="https://kit.fontawesome.com/2a3113b188.js" crossorigin="anonymous"></script>
 
-  <!-- Implementacion del cdn de compressor -->
-  <script src="https://cdn.jsdelivr.net/npm/compressorjs@1.0.7/dist/compressor.min.js"></script> 
   <script src="./uploads.js"></script>
 </body>
