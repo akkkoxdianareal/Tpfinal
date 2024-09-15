@@ -19,16 +19,19 @@ exitPopUp.addEventListener("click", () => {
 async function loadImages() {
 
     // Hace una peticion y la convierte en un json para la pagina
-    const respuesta = await fetch('/images')
-    const images = await respuesta.json()
+    const respuesta = await fetch('/images') // Hace la peticion de las imagenes
+    const images = await respuesta.json() // Lo que recibe lo convierte en un array
+    console.log(images)
+
     // Vacia el div para que no se dupliquen ni se mande cagada
     const newestSlider = document.querySelector('.newest')
     const gallery = newestSlider.querySelector('.swiper-wrapper')
     gallery.innerHTML = ''
+
     // Con el foreach va colocando las imagenes en el div
-    images.reverse().slice(0, 9).forEach(filename => { // El reverse() es para que se vallan poniendo en primer lugar las nuevas imagenes
+    images.reverse().slice(0, 9).forEach(image => { // El reverse() es para que se vallan poniendo en primer lugar las nuevas imagenes, y el slice() para que solo tome los primeros 9
         const imgElement = document.createElement('img')
-        imgElement.src = `/uploads/${filename}`
+        imgElement.src = `/uploads/${image.filename}`
         const newestCard = document.createElement('div')
         newestCard.classList.add('swiper-slide')
         newestCard.appendChild(imgElement)
@@ -42,10 +45,17 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
     e.preventDefault() // Evita que se recargue la pagina
 
     const imgFile = document.getElementById('imageInput').files[0] // Capturo la bandera, digo la imagen
+    const imgName = document.getElementById('fileName').value.trim()
 
     // Si intento subir sin ningun archivo seleccionado me dice "Che pive, no te hagas el forro y elegite una imagen"
     if (!imgFile) {
         alert('Por favor, seleccione una imagen')
+        return
+    }
+
+    // Si intenta subir una imagen sin nombre, lo manda a cagar hasta que le ponga un nombre
+    if (!imgName) {
+        alert('Por favor, asigne un nombre para la imagen')
         return
     }
 
@@ -57,7 +67,8 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
 
             // Esto es lo mismo que antes, se crea la estructura del POST
             const formData = new FormData()
-            formData.append('image', result, result.name || imgFile.name) // Imagen no tener nombre, asignar nombre
+            formData.append('image', result, result.name || imgFile.name) // Agrega la imagen ya comprimia
+            formData.append('name', imgName) // Agrega el nombre asignao
 
             // Subir imagen
             fetch('/upload', {

@@ -40,11 +40,14 @@ const subir = multer({
 
 // Esto es para leer y escribit el JSON
 app.post('/upload', subir.single('image'), (req, res) => { // Escuha todas las solicitudes POST del lado del front
-    const filename = req.file.filename // Aqui ya se le asigna el nombre
+    const fileName = req.file.filename // Aqui se le asigna la info el archivo a la variable
+    const imageName = req.body.name // Aqui le asigna el contenio de "name" a la variable
 
-    const images = JSON.parse(fs.readFileSync('imagenes.json', 'utf-8'))
-    images.push(filename) // Esto es para agregar el nuevo nombre en el JSON
-    fs.writeFileSync('imagenes.json', JSON.stringify(images))
+    const images = JSON.parse(fs.readFileSync('imagenes.json', 'utf-8')) // Toma el archivo json con el nombre de las imagenes
+
+    images.push({filename: fileName, name: imageName}) // Aqui guarda el nombre del archivo y el asignado por el usuario en la variable "images"
+   
+    fs.writeFileSync('imagenes.json', JSON.stringify(images)) // Escribe el nuevo contenido en el JSON
 
     res.status(200).json({ message: 'Imagen subida', filename: req.file.filename})
 })

@@ -642,3 +642,7 @@ nav ul.menuActive {
         width: 15rem;
     }
 }
+
+#fileName {
+    color: #000000;
+}

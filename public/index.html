@@ -27,6 +27,7 @@
     </section>
     <form id="uploadForm" action="/new-image" enctype="multipart/form-data">
       <p>Formatos admitidos: <span>JPEG</span> <span>PNG</span></p>
+      <input type="text" name="name" id="fileName">
       <input type="file" name="image" id="imageInput" accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
       <button class="btn btn-upload" type="submit"><a><i class="fa-solid fa-upload"></i></a></button>
     </form>
