@@ -46,6 +46,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
 
     const imgFile = document.getElementById('imageInput').files[0] // Capturo la bandera, digo la imagen
     const imgName = document.getElementById('fileName').value.trim()
+    const typeFile = ['image/jpeg', 'image/png', 'image/bmp', 'image/tiff', 'image/heif'] // Tipo de archivos aceptados
 
     // Si intento subir sin ningun archivo seleccionado me dice "Che pive, no te hagas el forro y elegite una imagen"
     if (!imgFile) {
@@ -58,6 +59,14 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
         alert('Por favor, asigne un nombre para la imagen')
         return
     }
+
+    // Solo permite subir el tipo de archivos previamente asignados
+    if (!typeFile) {
+        alert('Por favor, seleccione un tipo de imagen permitido')
+        return
+    }
+    // No se haga el vivo profe, esta pagina es inexpugnable
+    // Tambien se verifican los archivos desde el backend
 
     // Comprimo la imagen con Compressor
     new Compressor(imgFile, {
