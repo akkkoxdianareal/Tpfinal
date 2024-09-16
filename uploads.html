@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sube tu archivo</title>
+    <!-- Extras -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buttons.css">
+    <script type="module" src="extras.js" defer></script>
+
+</head>
+
+<body>
+    <!-- Load -->
+    <div class="loader">
+        <div class="icon-load"></div>
+        <p class="margin-left-2">Cargando recursos</p>
+    </div>
+    <!-- navbar -->
+     <header>
+    <nav>
+        <img src="logo.svg">
+        <i class="fa-solid fa-bars" id="menu"></i>
+        <div>
+            <ul>
+                <li class="menuitem"><a href="index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                <li class="menuitem"><a href="gallery.html"><i class="fa-regular fa-image"></i>Galeria</a></li>
+            </ul>
+            <button class="btn btn-upload margin-left-2" id="subir">
+                <a><i class="fa-solid fa-upload"></i>Subir</a>
+            </button>
+        </div>
+    </nav>
+    <!-- upload -->
+    <div class="upload-container">
+        <div class="upload-file">
+            <section>
+                <h1>Sube tus archivos</h1>
+            </section>
+            <form id="uploadForm" action="/new-image" enctype="multipart/form-data">
+                <p>Formatos admitidos: <span>JPEG</span> <span>PNG</span></p>
+                <input type="text" name="name" id="fileName" placeholder="Ingrese un titlo">
+                <input type="file" name="image" id="imageInput"
+                    accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
+                <button class="btn btn-upload" type="submit"><a><i class="fa-solid fa-upload"></i>Subir
+                        imagen</a></button>
+            </form>
+        </div>
+    </div>
+</header>
+    <script src="uploads.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/compressorjs@1.0.7/dist/compressor.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/2a3113b188.js" crossorigin="anonymous"></script>
+    <script>
+        // load
+
+        const loader = document.querySelector('.loader')
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setInterval(() => {
+                (loader.style.display = 'flex') ? loader.style.display = 'none' : loader.style.display = 'flex'
+
+            }, 200);
+        })
+        // loader create
+    </script>
+
+</body>
+
+</html>
