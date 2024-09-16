@@ -51,3 +51,19 @@
     color: var(--accentscolor-hover);
 
 }
+.btn-pag{
+    border-radius: 20px;
+    width: 2rem;
+    font-weight: 500;
+    outline: none;
+    border:none;
+    background: #ffffff00;
+}
+.btn-pag:hover{
+    background: var(--accentgradient);
+    color: var(--bg-color);
+}
+.pag-active{
+    background: var(--accentgradient);
+    color: var(--bg-color);
+}

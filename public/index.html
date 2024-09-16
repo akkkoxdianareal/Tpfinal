@@ -18,22 +18,8 @@
   <!-- Load -->
   <div class="loader">
     <div class="icon-load"></div>
+    <p class="margin-left-2">Cargando recursos</p>
   </div>
-  <!-- modal UPLOADS -->
-
-  <div class="upload-file">
-    <section>
-      <h1>Sube tus archivos</h1><i class="fa-solid fa-xmark" id="salirPopUp"></i>
-    </section>
-    <form id="uploadForm" action="/new-image" enctype="multipart/form-data">
-      <p>Formatos admitidos: <span>JPEG</span> <span>PNG</span></p>
-      <input type="text" name="name" id="fileName">
-      <input type="file" name="image" id="imageInput" accept=".jpg, .jpeg, .png, .bmp, .tiff, .heif, .raw, .psd">
-      <button class="btn btn-upload" type="submit"><a><i class="fa-solid fa-upload"></i></a></button>
-    </form>
-  </div>
-  <div class="overlay"></div>
-  <!-- POP UP UPLOADS -->
   <!--Header-->
   <header>
     <nav>
@@ -42,32 +28,33 @@
 
       <div>
 
-        <ul>          
-          <li class="menuitem"><a href="#"><i class="fa-solid fa-gear"></i>Uso</a></li>
-          <li class="menuitem"><a href="#"><i class="fa-regular fa-image"></i>Ventajas</a></li>
-          <li class="menuitem"><a href="#"><i class="fa-regular fa-image"></i>Galeria</a></li>
+        <ul>
+          <li class="menuitem"><a href="index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+          <li class="menuitem"><a href="#ventajas"><i class="fa-solid fa-circle-check"></i>Ventajas</a></li>
+          <li class="menuitem"><a href="gallery.html"><i class="fa-regular fa-image"></i>Galeria</a></li>
         </ul>
 
-        <button class="btn btn-upload margin-left-2" id="subir"><a><i class="fa-solid fa-upload"></i>Subir</a></button>
+        <button class="btn btn-upload margin-left-2" id="subir"><a href="uploads.html"><i class="fa-solid fa-upload"></i>Subir</a></button>
       </div>
     </nav>
-   <!-- MIMG HERO -->
-      <div class="mimg" id="mimg-hero">
-        <div class="mimg-container">
-          <p><span>Mimg</span> es un servicio simple y gratuito de alojamiento de imagenes<br><span> Donde compartir con el mundo tus ideas nunca
+    <!-- MIMG HERO -->
+    <div class="mimg" id="mimg-hero">
+      <div class="mimg-container">
+        <p><span>Mimg</span> es un servicio simple y gratuito de alojamiento de imagenes<br><span> Donde compartir tus
+            ideas nunca
             fue más facil</span></p>
-          <div class="mimg-hero">
-            <img src="resources/mimg1.png" id="mimg1">
-            <img src="resources/mimg2.png" id="mimg2">
-            <img src="resources/mimg3.png" id="mimg3">
-          </div>
+        <div class="mimg-hero">
+          <img src="resources/mimg1.png" id="mimg1">
+          <img src="resources/mimg2.png" id="mimg2">
+          <img src="resources/mimg3.png" id="mimg3">
         </div>
       </div>
+    </div>
 
     <!-- NEWEST IMAGES -->
     <div class="newest-wrapper">
       <div class="newest-slider">
-        <h1>Subidas recientemente</h1>
+        <h1 id="newest-title"><i class="fa-solid fa-cloud-arrow-up margin-right-1" id="check"></i>Subidas recientemente</h1>
         <div class="newest" navigation="true">
           <div class="swiper-wrapper">
 
@@ -85,61 +72,91 @@
 
 
   <!-- Main container -->
-   <div class="container">
-  <div class="hero-slider" navigation="true" pagination="true" pagination-type="progressbar" id="hero">
-    <!-- Additional required wrapper -->
-    <div class="parallax-bg" style="background-image: url(./resources/bg-paralax.png);" data-swiper-parallax="-23%">
+  <div class="container">
+    <div class="pros" id="ventajas">
+      <h1 id="pros-title"><i class="fa-solid fa-circle-check margin-right-1" id="check"></i>Ventajas</h1>
+      <div class="hero-slider" pagination="true" pagination-type="progressbar" id="hero">
+        <!-- Additional required wrapper -->
+        <div class="parallax-bg" style="background-image: url(./resources/bg-paralax.png);" data-swiper-parallax="-23%">
+        </div>
+
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+
+          <!-- slider 1 -->
+          <!-- slider1 -->
+          <div class="swiper-slide">
+            <div class="slider-content" id="item-1">
+              <h1 class="item-title" id="title-1"><i class="fa-solid fa-infinity margin-right-1"></i>Uso ilimitiado</h1>
+              <p>¡Puedes utilizar la plataforma de forma ilimitada, subiendo y compartiendo fotos de forma totalmente
+                gratuita!</p>
+            </div>
+          </div>
+
+          <!-- slider 2 -->
+          <div class="swiper-slide">
+            <div class="slider-content" id="item-2">
+              <h1 class="item-title" id="title-2"><i class="fa-regular fa-user margin-right-1"></i>Sin registro</h1>
+              <p>Nuestra plataforma permite el subir imagenes de forma completamente anonima para otros usuarios.</p>
+            </div>
+          </div>
+
+          <!-- slider 3 -->
+          <div class="swiper-slide">
+            <div class="slider-content" id="item-3">
+              <h1 class="item-title" id="title-3"><i class="fa-solid fa-image margin-right-1"></i>Archivos poco pesados
+              </h1>
+              <p>Nuestro servicio comprime las imagenes para reducir su peso, pero su calidad sigue siendo semejante a
+                la
+                imagen original.</p>
+            </div>
+
+          </div>
+          <!-- slider 4 -->
+          <div class="swiper-slide">
+            <div class="slider-content" id="item-4">
+              <h1 class="item-title" id="title-4"><i class="fa-solid fa-earth-americas margin-right-1"></i>Facilidad de uso
+              </h1>
+              <p>¡Es tan facil de usar e intuitivo que cualquiera en el mundo puedo publicar y compartir una imagen!</p>
+            </div>
+
+          </div>
+          <!-- slider 5 -->
+          <div class="swiper-slide">
+            <div class="slider-content" id="item-5">
+              <h1 class="item-title" id="title-5"><i class="fa-solid fa-mask margin-right-1"></i>Anonimo
+              </h1>
+              <p>Los demas usuarios no pueden saber quien publico alguna imagen, ni nadie en general.</p>
+            </div>
+          </div>
+          <!-- slider 6 -->
+          <div class="swiper-slide">
+            <div class="slider-content" id="item-6">
+              <h1 class="item-title" id="title-6"><i class="fa-solid fa-download margin-right-1"></i>Facilidad de descarga
+              </h1>
+              <p>Podes descargar cualquier imagen desde nuestro servidor sin problemas e utilizarla.</p>
+            </div>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
-
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-
-      <!-- slider 1 -->
-      <div class="swiper-slide">
-        <!-- parallax -->
-        <div data-swiper-parallax="-100" data-swiper-parallax-opacity="0"></div>
-        <!-- parallax -->
-        <div class="slider-content" id="item-1">
-          <h1 class="item-title" id="title-1"><i class="fa-solid fa-infinity margin-right-1"></i>Uso ilimitiado</h1>
-          <p>¡Puedes utilizar la plataforma de forma ilimitada, subiendo y compartiendo fotos de forma totalmente
-            gratuita!</p>
-        </div>
-      </div>
-
-      <!-- slider 2 -->
-      <div class="swiper-slide">
-        <!-- parallax -->
-        <div data-swiper-parallax="-100" data-swiper-parallax-opacity="0"></div>
-        <!-- parallax -->
-        <div class="slider-content" id="item-2">
-          <h1 class="item-title" id="title-2"><i class="fa-regular fa-user margin-right-1"></i>Sin registro</h1>
-          <p>Nuestra plataforma permite el subir imagenes de forma completamente anonima para otros usuarios.</p>
-        </div>
-      </div>
-
-      <!-- slider 3 -->
-      <div class="swiper-slide">
-        <!-- parallax -->
-        <div data-swiper-parallax="-100" data-swiper-parallax-opacity="0"></div>
-        <!-- parallax -->
-        <div class="slider-content" id="item-3">
-          <h1 class="item-title" id="title-3"><i class="fa-solid fa-image margin-right-1"></i>Archivos poco pesados
-          </h1>
-          <p>Nuestro servicio comprime las imagenes para reducir su peso, pero su calidad sigue siendo semejante a la
-            imagen original.</p>
-        </div>
-      </div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev" id="hero-nav"></div>
-    <div class="swiper-button-next" id="hero-nav"></div>
+    <!-- Hero slider end -->
   </div>
-  <!-- Hero slider end -->
-</div>
   <script src="https://kit.fontawesome.com/2a3113b188.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/compressorjs@1.0.7/dist/compressor.min.js"></script>
-  <script src="./uploads.js"></script>
+  <script src="./newestSlider.js"></script>
+  <script>
+    // load
+
+    const loader = document.querySelector('.loader')
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setInterval(() => {
+            (loader.style.display = 'flex') ? loader.style.display = 'none' : loader.style.display = 'flex'
+
+        }, 200);
+    })
+    // loader create
+</script>
 </body>

@@ -3,18 +3,21 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 new Swiper('.hero-slider', {
     direction: 'horizontal',
     loop: true,
-    parallax: true,
+    spaceBetween:0,
     autoplay: {
-        delay: 5000,
+       
     },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+    breakpoints: {
+        1750: {
+            slidesPerView: 3,
+            
+        },
+        1150: {
+            slidesPerView: 2,
+            
+        }
     },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    }
+
 })
 new Swiper('.newest', {
     direction: "horizontal",
@@ -61,11 +64,3 @@ menu.addEventListener('click', ()=>{
     menu.classList.toggle('menuActive')
 })
 
-// load
-
-const loader = document.querySelector('.loader')
-
-document.addEventListener('DOMContentLoaded', ()=>{
-      
-            loader.style.display = 'none'
-})
