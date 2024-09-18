@@ -3,6 +3,7 @@ const express = require('express')
 const multer = require('multer')
 const path = require('path')
 const fs = require('fs')
+const crypto = require('crypto')
 
 // Creo la variable para el server y su puerto
 const app = express()
@@ -43,13 +44,20 @@ app.post('/upload', subir.single('image'), (req, res) => { // Escuha todas las s
     const fileName = req.file.filename // Aqui se le asigna la info el archivo a la variable
     const imageName = req.body.name // Aqui le asigna el contenio de "name" a la variable
 
+    const date = new Date() // Creo la variable "date"
+    const localDate = date.toLocaleString() // Creo una variable con la hora local de donde esta el servidor
+
+    const hash = crypto.createHash('md5').update(localDate).digest('hex') // Creo un hash unico para cada archivo segun la hora
+
     const images = JSON.parse(fs.readFileSync('imagenes.json', 'utf-8')) // Toma el archivo json con el nombre de las imagenes
 
-    images.push({filename: fileName, name: imageName}) // Aqui guarda el nombre del archivo y el asignado por el usuario en la variable "images"
+    images.push({uuid: hash, filename: fileName, name: imageName, date: localDate}) // Asigno los datos previamente asignados a un bloque en el JSON
    
-    fs.writeFileSync('imagenes.json', JSON.stringify(images)) // Escribe el nuevo contenido en el JSON
+    fs.writeFileSync('imagenes.json', JSON.stringify(images, null, 2)) // Escribe el nuevo contenido en el JSON
 
     res.status(200).json({ message: 'Imagen subida', filename: req.file.filename})
+
+    console.log('Che man, algun pete subio una imagen a tu pagina')
 })
 
 // Esto es para las peticiones de las imagenes que se hacen en el front
