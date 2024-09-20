@@ -30,7 +30,7 @@ Para instalar MIMG en tu computadora, sigue estos pasos:
 ## ¿Cómo funciona?
 
 ### GET `/images`
-Cuando se carga la página, se realiza una petición `GET` a la ruta `/images`, la cual devuelve un archivo `imagenes.json` que contiene la información de las imágenes almacenadas. Este archivo incluye detalles como el UUID, nombre de archivo, nombre asignado por el usuario y la fecha de subida.
+Cuando se carga la página, se realiza una petición `GET` a la ruta `/images`, la cual devuelve un archivo `db.imagenes.json` que contiene la información de las imágenes almacenadas. Este archivo incluye detalles como el UUID, nombre de archivo, nombre asignado por el usuario y la fecha de subida.
 
 En la página principal, se mostrarán las últimas 9 imágenes subidas. En la galería, se mostrarán todas las imágenes, organizadas en secciones para facilitar la navegación.
 
@@ -45,7 +45,7 @@ El backend realiza las siguientes tareas:
 - Asigna un nombre único al archivo para evitar conflictos.
 - Registra la fecha de subida y genera un UUID para identificar la imagen.
 - Verifica que la extensión de la imagen esté permitida. Si no lo está, devuelve un mensaje de error.
-- Almacena la información en `imagenes.json` y guarda la imagen en la carpeta `imagenes`.
+- Almacena la información en `db.imagenes.json` y guarda la imagen en la carpeta `imagenes`.
 
 ## Integrantes
 
