@@ -1,4 +1,3 @@
-// por tema de compatibilidades los importo con const enves de import
 const express = require('express')
 const multer = require('multer')
 const path = require('path')
