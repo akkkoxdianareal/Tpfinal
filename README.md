@@ -24,7 +24,7 @@ Para instalar MIMG en tu computadora, sigue estos pasos:
 3. Inicia el backend ejecutando el siguiente comando:
 
     ```bash
-    node script.js
+    npm run dev
     ```
 
 ## ¿Cómo funciona?
