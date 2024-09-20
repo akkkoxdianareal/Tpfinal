@@ -49,11 +49,11 @@ app.post('/upload', subir.single('image'), (req, res) => { // Escuha todas las s
 
     const hash = crypto.createHash('md5').update(localDate).digest('hex') // Creo un hash unico para cada archivo segun la hora
 
-    const images = JSON.parse(fs.readFileSync('imagenes.json', 'utf-8')) // Toma el archivo json con el nombre de las imagenes
+    const images = JSON.parse(fs.readFileSync(path.join(__dirname, 'uploads', 'db.imagenes.json'), 'utf-8')) // Toma el archivo json con el nombre de las imagenes
 
     images.push({uuid: hash, filename: fileName, name: imageName, date: localDate}) // Asigno los datos previamente asignados a un bloque en el JSON
    
-    fs.writeFileSync('imagenes.json', JSON.stringify(images, null, 2)) // Escribe el nuevo contenido en el JSON
+    fs.writeFileSync(path.join(__dirname, 'uploads', 'db.imagenes.json'), JSON.stringify(images, null, 2)) // Escribe el nuevo contenido en el JSON
 
     res.status(200).json({ message: 'Imagen subida', filename: req.file.filename})
 
@@ -62,7 +62,7 @@ app.post('/upload', subir.single('image'), (req, res) => { // Escuha todas las s
 
 // Esto es para las peticiones de las imagenes que se hacen en el front
 app.get('/images', (req, res) => {
-    const images = JSON.parse(fs.readFileSync('imagenes.json', 'utf-8'))
+    const images = JSON.parse(fs.readFileSync(path.join(__dirname, 'uploads', 'db.imagenes.json'), 'utf-8'))
     res.json(images)
 })
 
