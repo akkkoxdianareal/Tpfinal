@@ -1,0 +1,7 @@
+export const API_GET = 'http://localhost:3000/images'
+export const API_STORAGE = 'http://localhost:3000/uploads/'
+export const PATH_GALLERY = '/gallery'
+export const PATH_HOME = '/'
+export const PATH_DOCS = '/docs'
+export const PATH_TERMS = '/terms'
+export const PATH_UPLOAD = '/upload_files'
