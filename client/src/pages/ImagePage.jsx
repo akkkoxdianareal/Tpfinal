@@ -55,7 +55,7 @@ export default function ImagePage() {
         >
             {imageFind &&
                 // Contenedor del badge MIMG y del boton volver
-                < Box minW={'xs'} width={'2xl'} maxW={'80dvw'} display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
+                < Box minW={'xs'} width={'100%'} maxW={'80dvw'} display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
 
                     {/* Boton Volver */}
 
@@ -75,15 +75,20 @@ export default function ImagePage() {
             {/* En caso de no tener imageFind (ya que lo consigue desde la ID de la URL) devolvera */}
             {
                 !imageFind &&
-                <Heading as={motion.div}
-                    initial={{ opacity: 0, transform: 'translateY(-.5rem)' }}
-                    animate={{ opacity: 1, transform: 'translateY(0)' }}>
-                    No hay imagenes que coincidan con esa ID.
-                    {/* Boton a galeria */}
-                    <Link to={'/gallery'}>
-                        <Button colorScheme="purple">Volver a la galeria</Button>
-                    </Link>
-                </Heading>
+                <Box width={'100%'} alignItems={'center'} mt={20} display={'flex'} flexDirection={'column'}>
+                    <Heading
+                        display={'flex'}
+                        flexDirection={'column'}
+                        as={motion.div}
+                        initial={{ opacity: 0, transform: 'translateY(-.5rem)' }}
+                        animate={{ opacity: 1, transform: 'translateY(0)' }}>
+                        No hay imagenes que coincidan con esa ID.
+                        {/* Boton a galeria */}
+                        <Link to={'/gallery'}>
+                            <Button colorScheme="purple">Volver a la galeria</Button>
+                        </Link>
+                    </Heading>
+                </Box>
             }
 
             {/* Si imageFind != undefined entonces nos devolvera el contenido */}
