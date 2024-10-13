@@ -53,23 +53,28 @@ export default function ImagePage() {
             mt={5}
             flexDirection={'column'} width={'auto'} maxW={'3xl'}
         >
-            {/* Boton de volver y Badge de MIMG */}
-            <Box minW={'xs'} width={'2xl'} maxW={'80dvw'} display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
+            {imageFind &&
+                // Contenedor del badge MIMG y del boton volver
+                < Box minW={'xs'} width={'2xl'} maxW={'80dvw'} display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
 
-                {/* Boton Volver */}
+                    {/* Boton Volver */}
 
-                <Link to={'/gallery'}>
-                    <Button colorScheme='purple'><ArrowBackIcon mr={2} />Volver</Button>
-                </Link>
+                    <Link to={'/gallery'}>
+                        <Button colorScheme='purple'><ArrowBackIcon mr={2} />Volver</Button>
+                    </Link>
 
-                {/* Badge */}
+                    {/* Badge */}
 
-                <Badge>MIMG</Badge>
+                    <Badge>MIMG</Badge>
 
-            </Box>
+                </Box>
+
+
+            }
 
             {/* En caso de no tener imageFind (ya que lo consigue desde la ID de la URL) devolvera */}
-            {!imageFind &&
+            {
+                !imageFind &&
                 <Heading as={motion.div}
                     initial={{ opacity: 0, transform: 'translateY(-.5rem)' }}
                     animate={{ opacity: 1, transform: 'translateY(0)' }}>
@@ -83,7 +88,8 @@ export default function ImagePage() {
 
             {/* Si imageFind != undefined entonces nos devolvera el contenido */}
 
-            {imageFind != undefined &&
+            {
+                imageFind != undefined &&
 
                 // Caja contenedora
                 <Box display={'flex'}
