@@ -88,6 +88,7 @@ export const FormUpload = () => {
         })
         // Previene de recargar la pagina en el onSubmit
         e.preventDefault()
+        this.reset()
 
     }
     // Mini comentario: podria andar mejor lo de onChange de los input si guardaramos en otro estado el valor del texto que ingresamos
@@ -156,27 +157,27 @@ export const FormUpload = () => {
 
                     {/* FormControl para estilizar el isRequired */}
                     <FormControl isRequired display={'flex'} flexDirection={'column'}>
-                        
+
                         {/* Input File */}
                         <FormLabel mt={2}>Selecciona una imagen</FormLabel>
-                        <Input width={'auto'} textAlign={'center'} variant={'filled'} padding={.5} type="file" onChange={(e) => setFile(e.target.files[0])} name='file' required />
+                        <Input width={'auto'} textAlign={'center'} variant={'filled'} padding={.5} type="file" onChange={(e) => setFile(e.target.files[0])} onSubmit={() => this.reset()} name='file' required />
 
                         {/* Input Titulo / Nombre */}
                         <FormLabel mt={2}>Titulo de la imagen</FormLabel>
-                        <Input width={{ base: 'xs', lg: '2xl' }} type="text" variant={'filled'} onChange={(e) => setName(e.target.value)} name='name' placeholder='Ingrese el titulo de la imagen' maxLength='40' required />
-                    
+                        <Input width={{ base: 'xs', lg: '2xl' }} type="text" variant={'filled'} onChange={(e) => setName(e.target.value)} onSubmit={() => this.reset()} name='name' placeholder='Ingrese el titulo de la imagen' maxLength='40' required />
+
                     </FormControl>
 
                     {/* Input Tags */}
                     <FormLabel mt={2}>Tags / Separados por coma</FormLabel>
-                    <Input width={{ base: 'xs', lg: '2xl' }} type="text" variant={'filled'} onChange={(e) => setTags(e.target.value.trim())} name='tag' maxLength='20' placeholder='Ingre tus tags separados por coma' />
+                    <Input width={{ base: 'xs', lg: '2xl' }} type="text" variant={'filled'} onChange={(e) => setTags(e.target.value.trim())} onSubmit={() => this.reset()} name='tag' maxLength='20' placeholder='Ingre tus tags separados por coma' />
 
                     {/* Input Descipción */}
                     <FormLabel mt={2}>Escribe una descripción</FormLabel>
-                    <Textarea width={{ base: 'xs', lg: '2xl' }} resize={"none"} variant={'filled'} onChange={(e) => setDescription(e.target.value)} name='description' maxLength={300} required />
+                    <Textarea width={{ base: 'xs', lg: '2xl' }} resize={"none"} variant={'filled'} onChange={(e) => setDescription(e.target.value)} onSubmit={() => this.reset()} name='description' maxLength={300} required />
 
                     {/* Boton de Subir */}
-                    <Button mt={10} colorScheme='gray' variant={'solid'} type='submit'><FaUpload />Subir</Button>
+                    <Button mt={10} colorScheme='purple' variant={'solid'} type='submit'><FaUpload style={{ marginRight: '.5rem' }} />Subir</Button>
 
                 </Box>
             </form>

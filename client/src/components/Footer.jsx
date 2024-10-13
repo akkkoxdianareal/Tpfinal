@@ -32,7 +32,7 @@ export const Footer = () => {
                     <Img fill={'gray.400'} mt={2} width={'10'} opacity={.5} mr={2} src={Logo} />
 
                     {/* Enlaces a la pagina */}
-                    <List ml={2} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
+                    <List mt={2} ml={2} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
                         {/* Documentación, Terminos y Servcio */}
                         <ListItem display={'flex'} alignItems={'center'} ><Text mr={2} fontSize={'sm'} textColor={'gray.400'}><Link to={PATH_DOCS}>Documentación</Link></Text></ListItem>
                         <ListItem display={'flex'} alignItems={'center'} ><Text mr={2} fontSize={'sm'} textColor={'gray.400'}><Link to={PATH_TERMS}>Terminos y condiciones</Link></Text></ListItem>
