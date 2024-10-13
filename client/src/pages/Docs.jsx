@@ -94,7 +94,7 @@ export default function Docs() {
 
                         {/* Información */}
                         <UnorderedList mt={2}>
-                            <ListItem textColor={'gray.400'}>NodeJS: Libreria base</ListItem>
+                            <ListItem textColor={'gray.400'}>NodeJS: Runtime</ListItem>
                             <ListItem textColor={'gray.400'}>Express: Para hostear la API</ListItem>
                             <ListItem textColor={'gray.400'}>Multer: Libreria que permite subir archivos</ListItem>
                             <ListItem textColor={'gray.400'}>Crypto: Libreria que genera ID's unicas</ListItem>
