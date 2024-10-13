@@ -1,4 +1,10 @@
 # MIMG 
+![Node](https://img.shields.io/badge/NodeJs-20.17.0-green) ![React](https://img.shields.io/badge/React-18.3.1-blue) ![Axios](https://img.shields.io/badge/Axios-1.7.7-red)
+![CompressorJS](https://img.shields.io/badge/CompressorJS-1.2.1-yellow) ![ChakraUi](https://img.shields.io/badge/ChakraUI-2.10.1-aqua)
+![FramerMotion](https://img.shields.io/badge/FramerMotion-11.11.1-violet)
+
+
+
 
 ### ¿Qué es MIMG?
 **MIMG** es una página web donde los usuarios pueden subir imágenes para compartirlas con otros, de manera anónima y sencilla. No es necesario crear una cuenta, simplemente sube tu imagen y será visible para todos, siempre que no contenga contenido explícito.
