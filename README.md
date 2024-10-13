@@ -33,7 +33,7 @@ Para instalar MIMG en tu computadora, sigue estos pasos:
     git clone https://github.com/akkkoxdianareal/Tpfinal.git
     ```
 
-3. **Navegue entre las carpetas `client` y `server` del proyecto y luego instala sus dependencias**:      
+3. **Navegue entre las carpetas `client` y `server` del proyecto y luego instalá sus dependencias**:      
 
     - Server / API
         ```bash
