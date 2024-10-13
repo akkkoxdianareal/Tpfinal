@@ -8,7 +8,7 @@
 ![Axios](https://img.shields.io/badge/Axios-1.7.7-red?style=for-the-badge&logo=axios&logoColor=white&labelColor=black&ink=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Faxios)
 ![CompressorJS](https://img.shields.io/badge/CompressorJS-1.2.1-orange?style=for-the-badge&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcompressorjs)
 
->Libreria de componentes / animaciones
+>Libreria de componentes / animaciones    
 ![ChakraUI](https://img.shields.io/badge/ChakraUI-2.10.1-blue?style=for-the-badge&logo=chakraui&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fv2.chakra-ui.com%2F)
 ![Framer motion](https://img.shields.io/badge/FramerMotion-11.11.1-magenta?style=for-the-badge&logo=framermotion&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fframer-motion)
 
