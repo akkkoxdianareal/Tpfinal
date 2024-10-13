@@ -1,27 +1,27 @@
-# :camera: MIMG  	
+## :open_book: MIMG utiliza
 
->Back-End    
+Back-End    
 ![NodeJS](https://img.shields.io/badge/NodeJs-20.17-green?&logo=javascript&logoColor=white&labelColor=black&style=for-the-badge&link=https%3A%2F%2Fnodejs.org%2Fen%2F)
 ![Express](https://img.shields.io/badge/Express-4.21.0-blue?style=for-the-badge&logo=express&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fexpress)
 
 
->Front-End    
+Front-End    
 ![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Freact.dev)
 ![Axios](https://img.shields.io/badge/Axios-1.7.7-red?style=for-the-badge&logo=axios&logoColor=white&labelColor=black&ink=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Faxios)
 ![CompressorJS](https://img.shields.io/badge/CompressorJS-1.2.1-orange?style=for-the-badge&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcompressorjs)
 
->Libreria de componentes / animaciones    
+Libreria de componentes / animaciones    
 ![ChakraUI](https://img.shields.io/badge/ChakraUI-2.10.1-blue?style=for-the-badge&logo=chakraui&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fv2.chakra-ui.com%2F)
 ![Framer motion](https://img.shields.io/badge/FramerMotion-11.11.1-magenta?style=for-the-badge&logo=framermotion&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fframer-motion)
 
+## :question: Qué es MIMG
 
-
-## :question: ¿Qué es MIMG? 
 **MIMG** es una página web donde los usuarios pueden subir imágenes para compartirlas con otros, de manera anónima y sencilla. No es necesario crear una cuenta, simplemente sube tu imagen y será visible para todos. 
 
 ![MIMG Showcase](client/public/mimg2.png)
->[!CAUTION]
+
 >Cualquier contenido inflamatorio o indebido sera eliminado
+
 
 
 ## :wrench: Instalación
@@ -33,7 +33,7 @@ Para instalar MIMG en tu computadora, sigue estos pasos:
     git clone https://github.com/akkkoxdianareal/Tpfinal.git
     ```
 
-3. **Navegue entre las carpetas `client` y `server` del proyecto y luego instalar sus dependencias**:      
+3. **Navegue entre las carpetas `client` y `server` del proyecto y luego instala sus dependencias**:      
 
     - Server / API
         ```bash
