@@ -1,8 +1,10 @@
 # MIMG 
-![Node](https://img.shields.io/badge/NodeJs-20.17.0-green?style=for-the-badge) ![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge)
- ![Axios](https://img.shields.io/badge/Axios-1.7.7-red?style=for-the-badge)
-![CompressorJS](https://img.shields.io/badge/CompressorJS-1.2.1-yellow?style=for-the-badge) ![ChakraUi](https://img.shields.io/badge/ChakraUI-2.10.1-aqua?style=for-the-badge)
-![FramerMotion](https://img.shields.io/badge/FramerMotion-11.11.1-violet?style=for-the-badge)
+[![Node](https://img.shields.io/badge/NodeJs-20.17.0-green?style=for-the-badge)] (https://nodejs.org/en/)
+[![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge)] (https://react.dev/)
+[![Axios](https://img.shields.io/badge/Axios-1.7.7-red?style=for-the-badge)] (https://www.npmjs.com/package/axios)
+[![CompressorJS](https://img.shields.io/badge/CompressorJS-1.2.1-yellow?style=for-the-badge)] (https://www.npmjs.com/package/compressorjs)
+[![ChakraUi](https://img.shields.io/badge/ChakraUI-2.10.1-aqua?style=for-the-badge)] (https://v2.chakra-ui.com/)
+[![FramerMotion](https://img.shields.io/badge/FramerMotion-11.11.1-violet?style=for-the-badge)] (https://www.npmjs.com/package/framer-motion)
 
 
 
