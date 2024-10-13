@@ -62,7 +62,7 @@ export default function NavBar() {
                 width={{ base: '100%', md: 'auto' }}
                 position={{ base: 'absolute', md: 'relative' }}
                 top={{ base: '4rem', md: '0' }}
-                bgColor={{ base: 'gray.800' }}
+                bgColor={{ base: 'gray.800', md:'transparent' }}
                 zIndex={'20'}
                 ref={refMenu}>
                 {/* Button 1 */}
