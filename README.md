@@ -1,17 +1,14 @@
 # MIMG 
 >Back End
 ![NodeJS](https://img.shields.io/badge/NodeJs-20.17-green?&logo=javascript&logoColor=white&labelColor=black&style=for-the-badge&link=https%3A%2F%2Fnodejs.org%2Fen%2F)
-![Multer](https://img.shields.io/badge/Multer-1.4.5%20lts.1-purple?style=for-the-badge&logo=multer&logoColor=white&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmulter)
 ![Express](https://img.shields.io/badge/Express-4.21.0-blue?style=for-the-badge&logo=express&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fexpress)
 
-
 >Front End
-![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react&logoColor=white&labelColor=black&link=https%3A%2F%2Freact.dev)
+![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Freact.dev)
 ![Axios](https://img.shields.io/badge/Axios-1.7.7-red?style=for-the-badge&logo=axios&logoColor=white&labelColor=black&ink=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Faxios)
-![CompressorJS](https://img.shields.io/badge/CompressorJS-1.2.1-orange?style=for-the-badge&logoColor=white&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcompressorjs)
-![ChakraUI](https://img.shields.io/badge/ChakraUI-2.10.1-blue?style=for-the-badge&logo=chakraui&logoColor=white&labelColor=black&link=https%3A%2F%2Fv2.chakra-ui.com%2F)
-![Framer motion](https://img.shields.io/badge/FramerMotion-11.11.1-magenta?style=for-the-badge&logo=framermotion&logoColor=white&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fframer-motion)
---------
+![CompressorJS](https://img.shields.io/badge/CompressorJS-1.2.1-orange?style=for-the-badge&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcompressorjs)
+![ChakraUI](https://img.shields.io/badge/ChakraUI-2.10.1-blue?style=for-the-badge&logo=chakraui&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fv2.chakra-ui.com%2F)
+![Framer motion](https://img.shields.io/badge/FramerMotion-11.11.1-magenta?style=for-the-badge&logo=framermotion&logoColor=white&logoSize=auto&labelColor=black&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fframer-motion)
 
 
 
